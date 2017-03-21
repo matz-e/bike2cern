@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name='bike2cern',
-    version=0.1.1,
+    version='0.1.1',
     description='Sync rides from Strava to CERN Sharepoint',
     author='Matthias Wolf',
     author_email='m@sushinara.net',
