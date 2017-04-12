@@ -13,11 +13,9 @@ following contents (adjusted):
 
     [cern]
     username = johndoe
-    list_id = dead-beef-01234-56789
 
 Client ID and secret can be obtained on
-[Strava](https://www.strava.com/settings/api), the `list_id` identifies
-which calendar to use for the CERN Sharepoint.
+[Strava](https://www.strava.com/settings/api).
 
 Save the CERN password in the system keyring:
 
@@ -33,4 +31,6 @@ synced), e.g., for the first half of the year:
     bike2cern --dry-run 2017-01-01 2017-07-01
 
 Remove `--dry-run` to actually do the sync.  **Use at your own risk, syncing
-too much will require manual deletion!**
+too much will require manual deletion!**  The python Sharepoint library
+currenty does not return a list of calendar items currently, hence the
+need to specify sync dates.

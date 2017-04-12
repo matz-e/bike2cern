@@ -23,7 +23,6 @@ class Sync(object):
         self.__token = keyring.get_password('bike2cern', 'strava')
         self.__user = config['cern']['username']
         self.__pass = keyring.get_password('bike2cern', 'cern')
-        self.__list = config['cern']['list_id']
 
         if not self.__token:
             self.__fetch_token()
@@ -63,7 +62,7 @@ class Sync(object):
         url = 'https://social.cern.ch/community/BikeCommuters'
         opener = basic_auth_opener(url, self.__user, self.__pass)
         site = SharePointSite(url, opener)
-        cal = site.lists[self.__list]
+        cal = site.lists["Calendar"]
 
         total = 0
         for activity in client.get_activities(before=end, after=start):
