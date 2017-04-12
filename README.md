@@ -23,6 +23,16 @@ Save the CERN password in the system keyring:
 
 Upon first usage, `bike2cern` will request a Strava access token.
 
+## Fixing the Sharepoint Dependency
+
+Unfortunately, the sharepoint library that *bike2cern* uses does not
+support Python 3 completely.  If the sync crashes, add the following to top
+of the last file printed in the stack trace (this should happen twice):
+
+```python
+unicode = str
+```
+
 ## Usage
 
 Use with a start and end date (rides on the day of the end date will not be
